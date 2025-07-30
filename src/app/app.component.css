@@ -1,0 +1,15 @@
+table td,table th{
+    border:1px solid #ccc;
+}
+table{
+    width:100%;
+}
+.todo{
+    padding:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+.todofield input,.todofield .btn     {
+    margin:20px 0px;
+ 
+}

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="jumbtron bg-primary todo"> TODO APP</div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 todofield">
+      <input type="text" class="form-control" placeholder="Task Name" [(ngModel)]="taskObj.taskName">
+      <textarea class="form-control" placeholder="Task Description" [(ngModel)]="taskObj.taskDescription" ></textarea>
+      <input type="date" class="form-control" placeholder="Due Date" [(ngModel)]="taskObj.dueDate" >
+      <input type="text" value="text" class="form-control" placeholder="Enter Comma separated tags" [(ngModel)]="taskObj.tags" >
+      <button type="button" class="btn btn-primary" (click)="addTask()">Add Task</button>
+    </div>
+  </div>
+  <div class="row">
+    <table>
+      <thead>
+        <th>Sno</th>
+        <th>Program name</th>
+        <th>date</th>
+        <th>tags</th>
+      </thead>
+      <tbody>
+        @for ( item of taskList; track 'itemId' ) {
+        <tr>
+          <td>{{$index}}</td>
+          <td><p><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></p>
+          {{item.taskName}}
+          </td>
+          <td> {{item.dueDate | date:'dd-MMM-yyyy'}}</td>
+          <td><button type="button" class="btn btn-success" (click)="onEdit(item)">Edit</button></td>
+        </tr>
+        }
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet />
