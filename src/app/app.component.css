@@ -1,8 +1,92 @@
-table td,table th{
-    border:1px solid #ccc;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.container-fluid{
+   font-family: "Poppins", sans-serif; 
+background-size:cover
+
+}
+.in{
+  place-content:center;
+}
+.p1-20{
+  padding-left:20px;
+}
+.main-container{
+  width:80%;
+  margin:auto; 
+   font-family: "Poppins", sans-serif;
+}
+tbody, td, tfoot, th, thead, tr{
+  padding:10px;
 }
 table{
     width:100%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+.table-striped{
+background: #93f179;
+}
+th{
+    background-color: #10913d;
+    color:#fff;
+    padding: 5px 10px;
+}
+
+    tr:nth-child(odd) {
+      background-color: #f9f9f9; /* Light gray */
+   
+    }
+    tr:nth-child(even) {
+      background-color: #e1f5e6; /* Light blue */
+    }
+.btn-border{
+  border: 2px solid #137610;
+
+}
+.btn-border:hover{
+  background:#137610;
+  color:#fff;
+}
+.todofield{
+    background: #ccc;
+    border-radius: 10px;
+    height: 400px;
+    background: url(../assets/images/abstract-green-and-yellow-color-background-illustration-eps10-vector.jpg);
+}
+.todofield input,.todofield textarea{
+    background:#ffffff96
+}
+.sub {
+  background-color: #10913d;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  animation: pulse 2s infinite 1s cubic-bezier(0.25, 0, 0, 1);
+  box-shadow: 0 0 0 0 #10913d;
+  color: white;
+  border: 2px solid #10913d;
+  transition: color 0.2s ease 0s, background-color 0.2s ease 0s,
+    border 0.2s ease 0s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 999999;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.animted-button-pulse:hover {
+  background-color: white !important;
+  color: #10913d;
+  opacity: 1;
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 18px rgba(255, 255, 255, 0);
+  }
 }
 .todo{
     padding:20px;
@@ -12,4 +96,50 @@ table{
 .todofield input,.todofield .btn     {
     margin:20px 0px;
  
+}
+
+
+.app {
+    border-radius: 20px;
+    text-align: center;
+    font-size:40px;
+    background: radial-gradient(100% 100% at var(--g1-1-x-position) var(--g1-1-y-position),#4cda7b 0%,transparent),radial-gradient(100% 100% at var(--g1-2-x-position) var(--g1-2-y-position),#93f179 0%,transparent),#335b3f;
+animation-name: g-1;
+animation-iteration-count: infinite;
+animation-duration: 3s;
+transition-timing-function: ease-in
+}
+
+@property --g1-1-x-position { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
+
+@property --g1-1-y-position { syntax: "<percentage>"; inherits: false; initial-value: 80%; }
+
+@property --g1-2-x-position { syntax: "<percentage>"; inherits: false; initial-value: 80%; }
+
+@property --g1-2-y-position { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
+
+
+:root {
+
+--g1-1-x-position: 20%
+
+--g1-1-y-position: 80%
+
+--g1-2-x-position: 80%
+
+--g1-2-y-position: 20%
+
+}
+
+
+@keyframes g-1 { 25% { --g1-1-x-position: 15%; --g1-1-y-position: 15%; --g1-2-x-position: 85%; --g1-2-y-position: 80%; } 50% { --g1-1-x-position: 80%; --g1-1-y-position: 15%; --g1-2-x-position: 15%; --g1-2-y-position: 85%; } }
+
+/**responsive media**/
+@media only screen and (max-width:768px){
+ .main-container{
+  width:100%;
+ }
+ .todofield{
+  margin-top:10px;
+ }
 }
